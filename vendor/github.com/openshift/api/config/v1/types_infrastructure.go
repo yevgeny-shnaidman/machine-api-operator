@@ -201,8 +201,8 @@ type BareMetalPlatformStatus struct {
 	// to the nodes in the cluster.
 	NodeDNSIP string `json:"nodeDNSIP,omitempty"`
 
-	// enableBaremetalOperator
-	EnableBaremetalOperator bool `json:"enableBaremetalOperator,omitempty"`
+	// disableBaremetalOperator
+	DisableBaremetalOperator bool `json:"disableBaremetalOperator,omitempty"`
 }
 
 // OpenStackPlatformStatus holds the current status of the OpenStack infrastructure provider.
