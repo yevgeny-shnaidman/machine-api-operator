@@ -271,7 +271,7 @@ func (optr *Operator) maoConfigFromInfrastructure() (*OperatorConfig, error) {
 	}
 
 	usingBareMetal := provider == osconfigv1.BareMetalPlatformType
-	baremetalControllers := newBaremetalControllers(*images, usingBareMetal)
+	baremetalControllers := newBaremetalControllers(*images, usingBareMetal, infra)
 
 	machineAPIOperatorImage, err := getMachineAPIOperatorFromImages(*images)
 	if err != nil {

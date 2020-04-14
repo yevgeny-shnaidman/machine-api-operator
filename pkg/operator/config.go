@@ -103,8 +103,8 @@ func getProviderControllerFromImages(platform configv1.PlatformType, images Imag
 }
 
 // This function returns images required to bring up the Baremetal Pod.
-func newBaremetalControllers(images Images, usingBareMetal bool) BaremetalControllers {
-	if !usingBareMetal {
+func newBaremetalControllers(images Images, usingBareMetal bool, infra *configv1.Infrastructure) BaremetalControllers {
+	if !usingBareMetal || infra.Status.PlatformStatus.BareMetal.DisableBaremetalOperator {
 		return BaremetalControllers{}
 	}
 	return BaremetalControllers{
